@@ -23,12 +23,12 @@
         <div class="overlay">
             <div class="register-box">
                 <h1>REGISTRO</h1>
-                <form action="registro.php" method="POST" id="register-form">
+                <form action="register.php" method="post" id="register-form">
                     <input type="text" name="nombre" placeholder="Nombre" required>
                     <input type="email" name="correo" placeholder="Correo electrónico" required>
                     <input type="password" name="contraseña" placeholder="Contraseña" required id="password">
                     <input type="password" name="confirmar_contraseña" placeholder="Confirmar contraseña" required id="confirm-password">
-                    <div class="error-message" id="error-message"></div>
+                    <br>
                     <div class="botones">
                         <button type="submit" class="boton animacion">Registrarme ahora</button>
                         <button type="button" class="boton animacion" onclick="location.href='../LogScreen/login.html'">Ya tengo cuenta</button>

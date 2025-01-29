@@ -6,8 +6,9 @@ session_start();
 $servername = "database-1.cba00ygu8qru.eu-north-1.rds.amazonaws.com";
 $username = "admin";
 $password = "Raul24h3rm4n0!";
-$dbname = "database-1";
+$dbname = "TFG";
 
+// Crear conexión
 $conn = new mysqli($servername, $username, $password, $dbname);
 
 // Verificar la conexión
@@ -15,12 +16,13 @@ if ($conn->connect_error) {
     die("Error de conexión: " . $conn->connect_error);
 }
 
+// Verificar si el formulario se ha enviado
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $nombre = trim($_POST['nombre']);
-    $apellido = trim($_POST['apellido']);
-    $correo = trim($_POST['correo']);
-    $contraseña = $_POST['contraseña'];
-    $confirmar_contraseña = $_POST['confirmar_contraseña'];
+    // Extraer valores del formulario
+    $nombre = trim($_POST['nombre'] ?? '');
+    $correo = trim($_POST['correo'] ?? '');
+    $contraseña = $_POST['contraseña'] ?? '';
+    $confirmar_contraseña = $_POST['confirmar_contraseña'] ?? '';
 
     // Verificar que las contraseñas coincidan
     if ($contraseña !== $confirmar_contraseña) {
@@ -32,7 +34,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $contraseña_encriptada = password_hash($contraseña, PASSWORD_DEFAULT);
 
     // Verificar si el correo ya está registrado
-    $sql = "SELECT correo FROM usuarios WHERE correo = ?";
+    $sql = "SELECT correo FROM Usuarios WHERE correo = ?";
     $stmt = $conn->prepare($sql);
     $stmt->bind_param("s", $correo);
     $stmt->execute();
@@ -46,13 +48,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $stmt->close();
 
     // Insertar datos en la base de datos
-    $sql = "INSERT INTO usuarios (nombre, apellido, correo, contraseña) VALUES (?, ?, ?, ?)";
+    $sql = "INSERT INTO Usuarios (nombre, correo, contraseña) VALUES (?, ?, ?)";
     $stmt = $conn->prepare($sql);
-    $stmt->bind_param("ssss", $nombre, $apellido, $correo, $contraseña_encriptada);
+    $stmt->bind_param("sss", $nombre, $correo, $contraseña_encriptada);
 
     if ($stmt->execute()) {
-        echo "Registro exitoso. Redirigiendo...";
-        header("Refresh: 2; URL=login.html");
+        echo "Registro exitoso!";
+        exit;
     } else {
         echo "Error al registrar: " . $conn->error;
     }
@@ -60,5 +62,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $stmt->close();
 }
 
+// Cerrar la conexión
 $conn->close();
 ?>
