@@ -24,8 +24,8 @@ body {
     height: 100px; /* o cualquier otro valor que desees */
 }
 .logo img {
-    padding-top: 20px;
-    padding-left: 30px;
+    padding-top: 40px;
+    padding-left: 40px;
 ;
 }
 .nav-buttons {
@@ -78,7 +78,7 @@ body {
     font-family: "Lexend Zetta", serif;
     font-weight: 700;
     line-height: 1.5;
-margin-top: 20px;
+margin-bottom: 20px;
 padding-left: 30px;
 }
 
@@ -102,7 +102,7 @@ padding-left: 30px;
     width: 300px;
     height: 200px;
     will-change: transform;
-    margin-bottom: 200px;
+    margin-bottom: 100px;
     margin-right: 400px;
   }
   
