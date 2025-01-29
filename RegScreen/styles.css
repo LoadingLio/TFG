@@ -109,3 +109,9 @@ body, html {
     transition: all 0.2s ease-in-out;
 }
 
+.error-message {
+    display: none;
+    color: red;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
