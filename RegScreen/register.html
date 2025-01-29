@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend+Zetta:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="top-bar">
+            <div class="logo">
+                <a href="../index.html">
+                    <img alt="GOD" src="../Sources/god.png"/>
+                </a>
+            </div>
+        </div>
+        <div class="overlay">
+            <div class="register-box">
+                <h1>REGISTRO</h1>
+                <form action="registro.php" method="POST">
+                    <input type="text" name="nombre" placeholder="Nombre" required>
+                    <input type="text" name="apellido" placeholder="Apellido" required>
+                    <input type="email" name="correo" placeholder="Correo electrónico" required>
+                    <input type="password" name="contraseña" placeholder="Contraseña" required>
+                    <input type="password" name="confirmar_contraseña" placeholder="Confirmar contraseña" required>
+                    <div class="botones">
+                        <button type="submit" class="boton animacion">Registrarme ahora</button>
+                        <button type="button" class="boton animacion" onclick="location.href='../LogScreen/login.html'">Ya tengo cuenta</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
