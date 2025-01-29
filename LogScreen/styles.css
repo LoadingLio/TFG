@@ -28,9 +28,13 @@ body, html {
 }
 .login-box {
     background: #000;
+    border: 2px solid white;
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    box-shadow: 
+    0 0 10px rgba(255, 255, 255, 0.8), 
+    0 0 20px rgba(255, 255, 255, 0.6), 
+    0 0 40px rgba(255, 255, 255, 0.4);
     width: 90%;
     max-width: 400px;
     text-align: center;
@@ -42,16 +46,18 @@ body, html {
 .login-box input {
     width: 100%;
     padding: 10px;
-    margin: 10px 0;
+    margin-bottom: 20px;
     border: none;
-    border-radius: 5px;
+    border-bottom: 2px solid rgb(255, 255, 255);
+    background: transparent;
+    color: rgba(181, 181, 181, 0.29);
+    font-size: 16px;
+    outline: none;
 }
-.login-box input[type="text"], .login-box input[type="password"] {
-    background: #333;
-    color: #fff;
-}
+
 .login-box input[type="checkbox"] {
     width: auto;
+    margin-top: 20px;
 }
 .login-box label {
     color: #fff;
@@ -84,6 +90,7 @@ body, html {
     -moz-transition: ease-out 0.4s;
     transition: ease-out 0.4s;
   }
+  
 .animacion:hover {
   box-shadow: inset 400px 0 0 0 #ffffff;
   color: #000000;
