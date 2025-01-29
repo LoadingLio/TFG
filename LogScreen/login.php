@@ -1,37 +1,64 @@
 <?php
-# nombre del sercvidor AWS y usuario y contraseña 
+// Inicializar la sesión
 session_start();
+
+// Configuración de la base de datos
 $servername = "database-1.cba00ygu8qru.eu-north-1.rds.amazonaws.com";
 $username = "admin";
 $password = "Raul24h3rm4n0!";
-$dbname = "database-1";
+$dbname = "TFG"; // Asegúrate de que este sea el nombre correcto de la base de datos
 
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-if ($conn->connect_error) {
-    header("Location: conexion_invalida.html");
+// Conectar a la base de datos con PDO
+try {
+    $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+} catch (PDOException $e) {
+    echo "Error de conexión: " . $e->getMessage();
     exit;
 }
 
+// Verificar si se ha enviado el formulario
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $email = $_POST['email'];
-    $pass = $_POST['password'];
+    // Validar los datos
+    if (isset($_POST["email"]) && isset($_POST["password"])) {
+        $email = trim($_POST["email"]);
+        $pass = trim($_POST["password"]);
 
-    $sql = "SELECT * FROM usuarios WHERE email = ? AND password = ?";
-    $stmt = $conn->prepare($sql);
-    $stmt->bind_param("ss", $email, $pass);
-    $stmt->execute();
-    $result = $stmt->get_result();
+        // Verificar que los campos no estén vacíos
+        if (empty($email) || empty($pass)) {
+            echo "Por favor, complete todos los campos.";
+            exit;
+        }
 
-    if ($result->num_rows > 0) {
-        $_SESSION['email'] = $email;
-        header("Location: login_exitoso.html");
+        // Preparar la consulta SQL
+        $stmt = $conn->prepare("SELECT * FROM Usuarios WHERE correo = :email AND contraseña = :password");
+        $stmt->bindParam(":email", $email);
+        $stmt->bindParam(":password", $pass);
+
+        // Ejecutar la consulta SQL
+        try {
+            $stmt->execute();
+            $result = $stmt->fetch(PDO::FETCH_ASSOC);
+
+            if ($result) {
+                // Iniciar la sesión
+                $_SESSION['email'] = $email;
+                header("Location: login_exitoso.html");
+                exit;
+            } else {
+                echo "Credenciales incorrectas.";
+                exit;
+            }
+        } catch (PDOException $e) {
+            echo "Error de consulta: " . $e->getMessage();
+            exit;
+        }
     } else {
-        header("Location: credenciales_incorrectas.html");
+        echo "Por favor, complete todos los campos.";
+        exit;
     }
-
-    $stmt->close();
 }
 
-$conn->close();
+// Cerrar la conexión
+$conn = null;
 ?>
