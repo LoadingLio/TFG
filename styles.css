@@ -1,0 +1,149 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #000;
+    color: #fff;
+}
+
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 0;
+    padding-top: 0; /* Asegúrate de que no haya márgenes innecesarios */
+}
+.logo {
+    display: inline;
+    align-items: left;
+    height: 100px; /* o cualquier otro valor que desees */
+}
+.logo img {
+    padding-top: 40px;
+    padding-left: 40px;
+;
+}
+.nav-buttons {
+    display: inline; /* Alinear los botones horizontalmente */
+    gap: 10px; /* Espaciado entre los botones */
+    padding-top: 20px;
+    padding-right: 20px;
+}
+
+.nav-buttons .reg_ahora {
+    background-color: #fff; /* Fondo blanco para REGISTRARME AHORA */
+    color: #000; /* Texto negro */
+    border: none;
+    padding: 10px 20px;
+    font-size: 14px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.nav-buttons .ini_sesion {
+    background-color: #000; /* Fondo negro para INICIAR SESIÓN */
+    color: #fff; /* Texto blanco */
+    border: 1px solid #fff; /* Borde blanco */
+    padding: 10px 20px;
+    font-size: 14px;
+    cursor: pointer;
+}
+.content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+    flex-direction: row;
+}
+.left-section {
+    width: 50%;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+.text-section {
+    flex-grow: 1;
+    padding: 20px;
+    text-align: left;
+    font-size: 48px;
+    margin: 0;
+    font-family: "Lexend Zetta", serif;
+    font-weight: 700;
+    line-height: 1.5;
+margin-bottom: 20px;
+padding-left: 30px;
+}
+
+
+.apuntarse {
+    background-color: #000;
+    border: 2px solid #fff; 
+    border-radius: 15px; /* Relleno redondeado */
+    box-sizing: border-box;
+    color: #ffffff;
+    cursor: pointer;
+    display: inline-block;
+    font-family: "Lexend Zetta", serif;
+    font-size: 16px;
+    font-weight: 600;
+    min-height: 60px;
+    padding: 16px 24px;
+    text-align: center;
+    transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+    touch-action: manipulation;
+    width: 300px;
+    height: 200px;
+    will-change: transform;
+    margin-bottom: 100px;
+    margin-right: 400px;
+  }
+  
+  .apuntarse:disabled {
+    pointer-events: none;
+  }
+  
+  .apuntarse:hover {
+    color: #000000;
+    background-color: #ffffff;
+    box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+    transform: translateY(-2px);
+  }
+  
+  .apuntarse:active {
+    box-shadow: none;
+    transform: translateY(0);
+  }
+.image-section {
+    width: 50%;
+    height: 800px;
+    display: flex;
+    justify-content: flex-end;
+    position: relative;
+    padding-top: 80px;
+  }
+  
+  .image-section img {
+    width: 50vw; /* Toma el ancho completo de la ventana */
+    height: 50vh; /* Toma el alto completo de la ventana */
+    object-fit: cover;
+    position: relative;
+    top: 0;
+    left: 0;
+}
+@media (max-width: 768px) {
+    .content {
+        flex-direction: column;
+    }
+    .text-section h1 {
+        font-size: 36px;
+    }
+    
+}
