@@ -1,6 +1,7 @@
 <?php
 // Inicializar la sesión
 session_start();
+
 // Configuración de la base de datos
 $servername = "database-1.cba00ygu8qru.eu-north-1.rds.amazonaws.com";
 $username = "admin";
@@ -43,7 +44,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         header("Location: login_exitoso.html");
         exit;
     } else {
-        echo "Credenciales incorrectas.";
+        // Mostrar mensaje de error
+        echo "<script>alert('Credenciales incorrectas');</script>";
         exit;
     }
 }
