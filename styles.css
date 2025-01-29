@@ -78,10 +78,17 @@ body {
     font-family: "Lexend Zetta", serif;
     font-weight: 700;
     line-height: 1.5;
-margin-bottom: 20px;
-padding-left: 30px;
+    margin-bottom: 20px;
+    padding-left: 30px;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 1s, transform 1s;
 }
 
+    .text-section.aparece {
+    opacity: 1;
+    transform: translateY(0);
+}
 
 .apuntarse {
     background-color: #000;

@@ -75,7 +75,7 @@ body, html {
     gap: 20px;
   }
   
-  .boton {
+  .no_cue {
     color: #FFF;
     border: 2px solid rgb(255, 255, 255);
     border-radius: 0px;
@@ -90,12 +90,32 @@ body, html {
     -moz-transition: ease-out 0.4s;
     transition: ease-out 0.4s;
   }
+  .ini_ses {
+    color: #000000;
+    border: 2px solid rgb(255, 255, 255);
+    background: white;
+    border-radius: 0px;
+    padding: 18px 36px;
+    display: inline-block;
+    font-family: "Lexend Zetta", serif;
+    font-size: 14px;
+    letter-spacing: 1px;
+    cursor: pointer;
+    box-shadow: inset 0 0 0 0 #000000;
+    -webkit-transition: ease-out 0.4s;
+    -moz-transition: ease-out 0.4s;
+    transition: ease-out 0.4s;
+  }
   
-.animacion:hover {
+.ani_no_cue:hover {
   box-shadow: inset 400px 0 0 0 #ffffff;
   color: #000000;
 }
 
+.ani_ini_ses:hover {
+    box-shadow: inset 400px 0 0 0 #000000;
+    color: #ffffff;
+  }
 .top-bar {
     position: absolute;
     top: 0;

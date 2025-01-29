@@ -1,7 +1,6 @@
 <?php
 // Inicializar la sesión
 session_start();
-
 // Configuración de la base de datos
 $servername = "database-1.cba00ygu8qru.eu-north-1.rds.amazonaws.com";
 $username = "admin";
