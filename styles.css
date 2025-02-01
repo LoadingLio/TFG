@@ -145,6 +145,7 @@ body {
     top: 0;
     left: 0;
 }
+
 @media (max-width: 768px) {
     .content {
         flex-direction: column;
