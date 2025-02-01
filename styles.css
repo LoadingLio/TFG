@@ -145,6 +145,110 @@ body {
     top: 0;
     left: 0;
 }
+.container {
+    text-align: center;
+    margin: 20px;
+    background: linear-gradient(to bottom, #000 0%,  #fff 10%); /* Gradiente más rápido */
+    padding: 80px 20px; /* Más espacio blanco */
+    padding-top: 100px;
+}
+
+
+
+.container h1 {
+    font-size: 48px;
+    margin-bottom: 10px;
+    color: #000;
+    font-family: "Lexend Zetta", serif;
+
+}
+
+.container p {
+    font-size: 18px;
+    margin-bottom: 40px;
+    color: #000;
+    font-family: "Lexend Zetta", serif;
+
+}
+
+.plans-wrapper {
+    background-color: #000;
+    border-radius: 20px;
+    padding: 40px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: fit-content;
+    margin: 0 auto;
+}
+
+.plans {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.plan {
+    background-color: #f0f0f0;
+    border-radius: 20px;
+    padding: 20px;
+    width: 300px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.3s ease;
+    color: #000;
+
+}
+
+.plan:hover {
+    transform: scale(1.05);
+}
+
+.plan h2 {
+    font-size: 36px;
+    margin-bottom: 10px;
+    font-family: "Lexend Zetta", serif;
+
+}
+
+.plan h3 {
+    font-size: 22px;
+    margin-bottom: 20px;
+    font-family: "Lexend Zetta", serif;
+
+}
+
+.plan ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 20px 0;
+    text-align: left;
+    flex-grow: 1;
+}
+
+.plan ul li {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.plan button {
+    background-color: #000;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 18px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.icon {
+    width: 16px;
+    height: 16px;
+    margin-right: 8px;
+    vertical-align: middle;
+}
 
 @media (max-width: 768px) {
     .content {
@@ -152,6 +256,10 @@ body {
     }
     .text-section h1 {
         font-size: 36px;
+    }
+    .plan {
+        width: 100%;
+        margin-bottom: 20px;
     }
     
 }

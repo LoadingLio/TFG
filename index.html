@@ -8,45 +8,82 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lexend+Zetta:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
 </head>
 <body>
+    <div class="header">
+        <div class="logo">
+            <a href="index.html">
+                <img alt="GOD" src="Sources/god.png"/>
+            </a>
+        </div>
+        <div class="nav-buttons">
+            <button class="reg_ahora" onclick="location.href='RegScreen/register.html'">REGISTRARME AHORA</button>
+            <button class="ini_sesion" onclick="location.href='LogScreen/login.html'">INICIAR SESIÓN</button>
+        </div>
+    </div>
+    <div class="content">
+        <div class="left-section">
+            <div class="text-section">
+                <h1>FORJA TU PROPIA HISTORIA</h1>
+            </div>
+            <button class="apuntarse" role="button" onclick="scrollToPlans()">Apuntarse</button>                
+        </div>
+        <div class="image-section">
+            <img alt="Statue of David lifting a dumbbell in a gym setting" src="Sources/dios.png"/>
+        </div>
+    </div>
 
+    <div class="container" id="plans-section">
+        <h1>Nos adaptamos a ti</h1>
+        <p>Elige tu plan ideal</p>
+        <div class="plans-wrapper">
+            <div class="plans">
+                <div class="plan">
+                    <h2>40€</h2>
+                    <h3>Poseidón Pack</h3>
+                    <ul>
+                        <li><img src="Sources/icon.png" alt="icon.png icon" class="icon">1 Mes de Suscripción</li>
+                        <li><img src="Sources/icon.png" alt="icon.png icon" class="icon">Entrada al Gimnasio 24h</li>
+                    </ul>
+                    <button>Empezar Ya</button>
+                </div>
+                <div class="plan">
+                    <h2>70€</h2>
+                    <h3>Apolo Pack</h3>
+                    <ul>
+                        <li><img src="Sources/icon.png" alt="icon.png icon" class="icon">1 Mes de Suscripción</li>
+                        <li><img src="Sources/icon.png" alt="icon.png icon" class="icon">Toalla de regalo</li>
+                        <li><img src="Sources/icon.png" alt="icon.png icon" class="icon">2h con Entrenador Personal a la Semana</li>
+                    </ul>
+                    <button>Empezar Ya</button>
+                </div>
+                <div class="plan">
+                    <h2>100€</h2>
+                    <h3>Zeus Pack</h3>
+                    <ul>
+                        <li><img src="Sources/icon.png" alt="icon.png icon" class="icon">3 Meses de Suscripción</li>
+                        <li><img src="Sources/icon.png" alt="icon.png icon" class="icon">Toalla y Mochila de regalo</li>
+                        <li><img src="Sources/icon.png" alt="icon.png icon" class="icon">4H con entrenador personal a la semana</li>
+                        <li><img src="Sources/icon.png" alt="icon.png icon" class="icon">Nutricionista</li>
+                    </ul>
+                    <button>Empezar Ya</button>
+                </div>
+            </div>
+        </div>
+    </div>
     
-        <div class="header">
-            <div class="logo">
-                <a href="index.html">
-                    <img alt="GOD" src="Sources/god.png"/>
-                </a>
-            </div>
-            <div class="nav-buttons">
-                <button class="reg_ahora" onclick="location.href='RegScreen/register.html'">REGISTRARME AHORA</button>
-                <button class="ini_sesion" onclick="location.href='LogScreen/login.html'">INICIAR SESIÓN</button>
-            </div>
-        </div>
-        
-        <div class="content">
-            <div class="left-section">
-                <div class="text-section">
-                    <h1>FORJA TU PROPIA HISTORIA</h1>
-                </div>
-                    <button class="apuntarse" role="button">Apuntarse</button>                
-            </div>
-                <div class="image-section">
-                    <img alt="Statue of David lifting a dumbbell in a gym setting" src="Sources/dios.png"/>
-                </div>
-        </div>
-        
-        <div class="footer">
-            <div class="footer-text">
-                <p style="color: rgba(255, 255, 255, 0.150);">© 2025 GOD FIT. Todos los derechos reservados.</p>
-            </div>
-        </div>
+
     <script>
         const textSection = document.querySelector('.text-section');
         setTimeout(() => {
             textSection.classList.add('aparece');
         }, 500);
+
+        function scrollToPlans() {
+            document.getElementById('plans-section').scrollIntoView({ behavior: 'smooth' });
+        }
     </script>
-   </body>
-  </html>
+</body>
 </html>
