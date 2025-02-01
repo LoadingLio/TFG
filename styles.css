@@ -148,9 +148,11 @@ body {
 .container {
     text-align: center;
     margin: 20px;
-    background: linear-gradient(to bottom, #000 0%,  #fff 10%); /* Gradiente más rápido */
+    position: relative;
+    background: #fff; 
     padding: 80px 20px; /* Más espacio blanco */
     padding-top: 100px;
+    border-radius: 40px;
 }
 
 
@@ -180,6 +182,10 @@ body {
     align-items: center;
     width: fit-content;
     margin: 0 auto;
+    box-shadow: 
+    0 0 10px rgba(0, 0, 0, 0.8), 
+    0 0 20px rgba(0, 0, 0, 0.6), 
+    0 0 40px rgba(0, 0, 0, 0.4);
 }
 
 .plans {
