@@ -3,10 +3,10 @@
 session_start();
 
 // Configuración de la base de datos
-$servername = "database-1.cba00ygu8qru.eu-north-1.rds.amazonaws.com";
-$username = "admin";
-$password = "Raul24h3rm4n0!";
-$dbname = "TFG";
+$servername = "127.0.0.1";
+$username = "root";
+$password = "raulemiliogermantfgsuperchachi";
+$dbname = "tfg";
 
 // Conectar a la base de datos con PDO
 try {
@@ -41,7 +41,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (password_verify($contraseña, $row['contraseña'])) {
         // Iniciar la sesión
         $_SESSION['correo'] = $correo;
-        header("Location: login_exitoso.html");
+        $_SESSION['nombre'] = $row['nombre'];
+        $_SESSION['apellido'] = $row['apellido'];
+        
+
+        // Redirige al usuario a espaciousuario.php
+        header('Location: ../EspUsuario/espaciousuario.php');
         exit;
     } else {
         // Mostrar mensaje de error

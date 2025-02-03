@@ -66,6 +66,8 @@ body, html {
     width: 400px;
     text-align: center;
     position: relative;
+    margin-top: 100px;
+    padding-top: 30px;
 
     /* Efecto de brillo  */
     box-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 
@@ -82,7 +84,7 @@ body, html {
 
 .register-box input {
     width: 100%;
-    padding: 10px;
+    padding-bottom: 15px;
     margin-bottom: 20px;
     border: none;
     border-bottom: 2px solid rgb(255, 255, 255);

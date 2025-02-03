@@ -25,6 +25,7 @@
                 <h1>REGISTRO</h1>
                 <form action="register.php" method="post" id="register-form">
                     <input type="text" name="nombre" placeholder="Nombre" required>
+                    <input type="text" name="apellido" placeholder="Primer Apellido" required>
                     <input type="email" name="correo" placeholder="Correo electrónico" required>
                     <input type="password" name="contraseña" placeholder="Contraseña" required id="password">
                     <input type="password" name="confirmar_contraseña" placeholder="Confirmar contraseña" required id="confirm-password">
@@ -37,7 +38,7 @@
             </div>
         </div>
     </div>
-    <script>
+    <script> 
         const passwordInput = document.getElementById('password');
         const confirmPasswordInput = document.getElementById('confirm-password');
         const errorMessage = document.getElementById('error-message');
