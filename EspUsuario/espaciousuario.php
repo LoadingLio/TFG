@@ -1,6 +1,43 @@
 <?php
 session_start();
+
+// Conecta a la base de datos
+$conn = mysqli_connect("localhost", "root", "raulemiliogermantfgsuperchachi", "tfg");
+
+// Verifica si la conexión fue exitosa
+if (!$conn) {
+    die("Error de conexión: " . mysqli_connect_error());
+}
+
+// Verifica si el usuario ha iniciado sesión
+if (isset($_SESSION['correo'])) {
+    $correo = $_SESSION['correo'];
+
+    // Consulta a la base de datos para obtener el nombre del usuario
+    $query = "SELECT nombre FROM usuarios WHERE correo = '$correo'";
+    $result = mysqli_query($conn, $query);
+
+    // Verifica si la consulta fue exitosa
+    if ($result) {
+        $row = mysqli_fetch_assoc($result);
+        $nombre_usuario = $row['nombre'];
+
+        // Setea la variable de sesión con el nombre del usuario
+        $_SESSION['nombre_usuario'] = ucfirst($nombre_usuario);
+    }
+}
+
+// Cierra la conexión a la base de datos
+mysqli_close($conn);
+
+// Verifica si la variable de sesión nombre_usuario está seteada
+if (isset($_SESSION['nombre_usuario'])) {
+    $usuario = $_SESSION['nombre_usuario'];
+} else {
+    $usuario = 'Invitado';
+}
 ?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -10,84 +47,70 @@ session_start();
     <link rel="stylesheet" href="styles.css">
     <style>
         body {
-            background: linear-gradient(to bottom,rgb(0, 0, 0),rgb(0, 0, 0));
+            background: linear-gradient(to bottom, rgb(0, 0, 0), rgb(0, 0, 0));
             color: white;
             font-family: Arial, sans-serif;
-            text-align: center;
             margin: 0;
             padding: 0;
         }
-        header {
-            padding: 20px;
-        }
-        .social-icons img {
-            width: 30px;
-            margin: 5px;
-        }
-        .clips-container {
+        .navbar {
             display: flex;
-            justify-content: center;
-            gap: 20px;
-            padding: 20px;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #333;
+            padding: 10px 20px;
         }
-        .clip {
-            border: 2px solid orange;
-            padding: 10px;
-            border-radius: 10px;
-            background: rgba(0, 0, 0, 0.5);
+        .navbar .welcome {
+            color: white;
+            font-size: 18px;
+            margin-right: auto; /* This makes the welcome text stay on the left */
         }
-        .clip img {
-            width: 200px;
-            border-radius: 5px;
+        .menu {
+            display: flex;
+            align-items: center; /* Align items to the center vertically */
+            gap: 10px; /* Reduce the space between menu items */
         }
-        .cerrar-sesion {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    font-size: 16px;
-    color: #fff;
-    text-decoration: none;
-}
-
-.cerrar-sesion a:hover {
-    color: #ccc;
-}
+        .menu a {
+            color: white;
+            padding: 8px 12px; /* Reduce padding for smaller spacing */
+            text-decoration: none;
+            display: block;
+        }
+        .menu a:hover {
+            background-color: #444;
+        }
+        .submenu {
+            position: relative;
+        }
+        .submenu-content {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #555;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+        }
+        .submenu:hover .submenu-content {
+            display: block;
+        }
     </style>
 </head>
 <body>
-    <header>
-    <?php if (isset($_SESSION['nombre']) && isset($_SESSION['apellido'])) { ?>
-        <h1><?php echo $_SESSION['nombre'] . ' ' . $_SESSION['apellido']; ?></h1>
-    <?php } else { ?>
-        <h1>Usuario no autenticado</h1>
-    <?php } ?>
-    <p>Jugador profesional del equipo TREXX</p>        
-        <div class="social-icons">
-            <a href="#"><img src="discord.png" alt="Discord"></a>
-            <a href="#"><img src="twitter.png" alt="Twitter"></a>
-            <a href="#"><img src="twitch.png" alt="Twitch"></a>
-            <a href="#"><img src="youtube.png" alt="YouTube"></a>
-        </div>
-        <div class="cerrar-sesion">
-            <a href="cerrar-sesion.php">Cerrar sesión</a>
-        </div>
-    </header>
-    <section class="clips">
-    <h2>LOS MEJORES CLIPS DE <?php echo $_SESSION['nombre']; ?></h2>        
-        <div class="clips-container">
-            <div class="clip">
-                <img src="clip1.jpg" alt="Camino a la liga">
-                <p>Camino a la liga (temporada 4)</p>
-            </div>
-            <div class="clip">
-                <img src="clip2.jpg" alt="Transmisión nocturna">
-                <p>Transmisión nocturna de campeonato (temporada 4)</p>
-            </div>
-            <div class="clip">
-                <img src="clip3.jpg" alt="Diversión con amigos">
-                <p>Diversión con amigos: noche de gaming</p>
+    <div class="navbar">
+        <div class="welcome">Bienvenido, <?php echo htmlspecialchars($usuario); ?> </div>
+        <div class="menu">
+            <a href="inicio.php">Inicio</a>
+            <a href="servicios.php">Servicios</a>
+            <a href="imagenes.php">Imágenes</a>
+            <a href="rutinas.php">Rutinas</a>
+            <div class="submenu">
+                <a href="#">Configuración</a>
+                <div class="submenu-content">
+                    <a href="datos_usuario.php">Datos de Usuario</a>
+                    <a href="cerrar-sesion.php">Cerrar Sesión</a>
+                </div>
             </div>
         </div>
-    </section>
+    </div>
 </body>
 </html>
