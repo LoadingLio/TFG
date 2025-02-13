@@ -45,6 +45,10 @@ if (isset($_SESSION['nombre_usuario'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tomás Suárez - Jugador Profesional</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend+Zetta:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <style>
         body {
             background: linear-gradient(to bottom, rgb(0, 0, 0), rgb(0, 0, 0));
@@ -58,11 +62,11 @@ if (isset($_SESSION['nombre_usuario'])) {
             justify-content: space-between;
             align-items: center;
             background-color: #333;
-            padding: 10px 20px;
+            padding: 15px 40px;
         }
         .navbar .welcome {
             color: white;
-            font-size: 18px;
+            font-size: 8px;
             margin-right: auto; /* This makes the welcome text stay on the left */
         }
         .menu {
@@ -110,6 +114,20 @@ if (isset($_SESSION['nombre_usuario'])) {
                     <a href="cerrar-sesion.php">Cerrar Sesión</a>
                 </div>
             </div>
+        </div>
+    </div>
+    <div class="botones-verticales">
+        <div class="boton-container">
+            <button class="boton">Agenda</button>
+        </div>
+        <div class="boton-container">
+            <button class="boton">Entrenamiento</button>
+        </div>
+        <div class="boton-container">
+            <button class="boton">Composición corporal</button>
+        </div>
+        <div class="boton-container">
+            <button class="boton">Dieta</button>
         </div>
     </div>
 </body>
