@@ -48,57 +48,63 @@ if (isset($_SESSION['nombre_usuario'])) {
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lexend+Zetta:wght@100..900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <style>
-        body {
-            background: linear-gradient(to bottom, rgb(0, 0, 0), rgb(0, 0, 0));
-            color: white;
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-        }
-        .navbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background-color: #333;
-            padding: 15px 40px;
-        }
-        .navbar .welcome {
-            color: white;
-            font-size: 8px;
-            margin-right: auto; /* This makes the welcome text stay on the left */
-        }
-        .menu {
-            display: flex;
-            align-items: center; /* Align items to the center vertically */
-            gap: 10px; /* Reduce the space between menu items */
-        }
-        .menu a {
-            color: white;
-            padding: 8px 12px; /* Reduce padding for smaller spacing */
-            text-decoration: none;
-            display: block;
-        }
-        .menu a:hover {
-            background-color: #444;
-        }
-        .submenu {
-            position: relative;
-        }
-        .submenu-content {
-            display: none;
-            position: absolute;
-            top: 100%;
-            left: 0;
-            background-color: #555;
-            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
-        }
-        .submenu:hover .submenu-content {
-            display: block;
-        }
-    </style>
 </head>
+<style>
+    body {
+    background: linear-gradient(to bottom, rgb(0, 0, 0), rgb(0, 0, 0));
+    color: white;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    padding: 15px 40px;
+}
+.navbar .welcome {
+    color: white;
+    font-size: 20px;
+    margin-right: auto; /* This makes the welcome text stay on the left */
+}
+.navbar .menu {
+    display: flex;
+    align-items: center; /* Align items to the center vertically */
+    gap: 10px; /* Reduce the space between menu items */
+    margin: 10px;
+}
+.navbar .menu a {
+    color: white;
+    padding: 5px; /* Reduce padding for smaller spacing */
+    
+}
+
+.submenu {
+    position: relative;
+    margin:10px;
+}
+.navbar .submenu-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #555;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    font-size:5px;
+    padding:10px;
+}
+
+.navbar .submenu-content a {
+    display: block;
+    padding: 5px;
+    margin-bottom: 5px;
+}
+.submenu:hover .submenu-content {
+    display: block;
+}
+</style>
 <body>
     <div class="navbar">
         <div class="welcome">Bienvenido, <?php echo htmlspecialchars($usuario); ?> </div>
