@@ -45,6 +45,25 @@ if (isset($_SESSION['nombre_usuario'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Espacio Usuario - GOD</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        .boton {
+            background-color: transparent; /* Make the button background transparent */
+            color: white; /* Text color */
+            border: 2px solid white; /* White border */
+            padding: 10px 20px; /* Padding for the button */
+            font-size: 16px; /* Font size */
+            cursor: pointer; /* Pointer cursor on hover */
+            transition: all 0.3s ease; /* Smooth transition for hover effect */
+            text-shadow: 0 0 5px white, 0 0 10px white, 0 0 15px white; /* Neon text effect */
+            box-shadow: 0 0 5px white, 0 0 10px white, 0 0 15px white; /* Neon glow effect */
+        }
+
+        .boton:hover {
+            background-color: rgb(209, 209, 209); /* Light background on hover */
+            box-shadow: 0 0 20px white, 0 0 30px; /* Enhanced glow on hover */
+        }
+    </style>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lexend+Zetta:wght@100..900&display=swap" rel="stylesheet">
@@ -104,6 +123,36 @@ if (isset($_SESSION['nombre_usuario'])) {
 .submenu:hover .submenu-content {
     display: block;
 }
+.footer {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            padding: 20px;
+            background-color: #111;
+        }
+        .footer-column {
+            max-width: 300px;
+        }
+        h3 {
+            border-bottom: 2px solid #444;
+            padding-bottom: 5px;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        ul li {
+            margin: 5px 0;
+        }
+        ul li a {
+            color: white;
+            text-decoration: none;
+        }
+        .footer-bottom {
+            text-align: center;
+            padding: 10px;
+            background-color: #000;
+        }
 </style>
 <body>
     <div class="navbar">
@@ -135,6 +184,40 @@ if (isset($_SESSION['nombre_usuario'])) {
         <div class="boton-container">
             <button class="boton">Dieta</button>
         </div>
+    </div>
+    <footer class="footer">
+        <div class="footer-column">
+            <h3>Contactanos</h3>
+            <p>📍 Avenida del Doctor Gadea, 35, Alicante, España</p>
+            <p>📞 +34 685 704 827</p>
+            <p>✉ GodGymContact@gmail.com</p>
+        </div>
+        <div class="footer-column">
+            <h3>Links rápidos</h3>
+            <ul>
+                <li><a href="inicio.php">Inicio</a>
+                <li><a href="servicios.php">Servicios</a>
+                <li><a href="imagenes.php">Imágenes</a>
+                <li><a href="rutinas.php">Rutinas</a>
+            </ul>
+        </div>
+        <div class="footer-column">
+            <h3>Links populares</h3>
+            <ul>
+                <li><a href="inicio.php">Inicio</a>
+                <li><a href="servicios.php">Servicios</a>
+                <li><a href="imagenes.php">Imágenes</a>
+                <li><a href="rutinas.php">Rutinas</a>
+            </ul>
+        </div>
+        <div class="footer-column">
+            <h3>Horario</h3>
+            <p>Lunes - Viernes: 7:00 - 22:00 </p>
+            <p>Sabado - Domingo: 8:00 - 13:00 </p>
+        </div>
+    </footer>
+    <div class="footer-bottom">
+        <p>© GodGym. Todos los derechos reservados. Diseñado por OsVilaDoTomate</p>
     </div>
 </body>
 </html>
