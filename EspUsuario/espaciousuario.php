@@ -13,28 +13,37 @@ if (!$conn) {
 if (isset($_SESSION['correo'])) {
     $correo = $_SESSION['correo'];
 
-    // Consulta a la base de datos para obtener el nombre del usuario
-    $query = "SELECT nombre FROM usuarios WHERE correo = '$correo'";
+    // Consulta a la base de datos para obtener el permiso y el nombre del usuario
+    $query = "SELECT permiso, nombre FROM Usuarios WHERE correo = '$correo'";
     $result = mysqli_query($conn, $query);
 
     // Verifica si la consulta fue exitosa
     if ($result) {
         $row = mysqli_fetch_assoc($result);
+        $permiso = $row['permiso'];
         $nombre_usuario = $row['nombre'];
 
-        // Setea la variable de sesión con el nombre del usuario
-        $_SESSION['nombre_usuario'] = ucfirst($nombre_usuario);
+        // Setea las variables de sesión con el permiso y el nombre del usuario
+        $_SESSION['permiso'] = $permiso;
+        $_SESSION['nombre_usuario'] = $nombre_usuario;
     }
 }
 
 // Cierra la conexión a la base de datos
 mysqli_close($conn);
 
+// Verifica si la variable de sesión permiso está seteada
+if (isset($_SESSION['permiso'])) {
+    $permiso = $_SESSION['permiso'];
+} else {
+    $permiso = '';
+}
+
 // Verifica si la variable de sesión nombre_usuario está seteada
 if (isset($_SESSION['nombre_usuario'])) {
-    $usuario = $_SESSION['nombre_usuario'];
+    $nombre_usuario = $_SESSION['nombre_usuario'];
 } else {
-    $usuario = 'Invitado';
+    $nombre_usuario = '';
 }
 ?>
 
@@ -156,8 +165,11 @@ if (isset($_SESSION['nombre_usuario'])) {
 </style>
 <body>
     <div class="navbar">
-        <div class="welcome">Bienvenido, <?php echo htmlspecialchars($usuario); ?> </div>
+        <div class="welcome">Bienvenido, <?php echo htmlspecialchars($nombre_usuario); ?> </div>
         <div class="menu">
+            <?php if ($permiso == 'administrador') { ?>
+                <a href="../Admin/admin.php">Admin</a>
+            <?php } ?>
             <a href="inicio.php">Inicio</a>
             <a href="servicios.php">Servicios</a>
             <a href="imagenes.php">Imágenes</a>
