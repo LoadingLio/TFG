@@ -93,6 +93,22 @@ if (isset($_SESSION['nombre_usuario'])) {
     padding: 15px 40px;
 }
 .navbar .welcome {
+    --glow-color: rgb(193, 191, 194);
+  --glow-spread-color: rgba(243, 242, 242, 0.78);
+  --enhanced-glow-color: rgb(214, 214, 214);
+  --btn-color: rgb(82, 82, 82);
+  border: .25em solid var(--glow-color);
+  padding: 1em 3em;
+  color: var(--glow-color);
+  font-size: 25px;
+  font-weight: bold;
+  background-color: var(--btn-color);
+  border-radius: 1em;
+  outline: none;
+  box-shadow: 0 0 1em .25em var(--glow-color),
+         0 0 4em 1em var(--glow-spread-color),
+         inset 0 0 .75em .25em var(--glow-color);
+  text-shadow: 0 0 .5em
     color: white;
     font-size: 20px;
     margin-right: auto; /* This makes the welcome text stay on the left */
@@ -137,7 +153,7 @@ if (isset($_SESSION['nombre_usuario'])) {
             justify-content: space-around;
             flex-wrap: wrap;
             padding: 20px;
-            background-color: #111;
+            background-color: #161616;
         }
         .footer-column {
             max-width: 300px;
@@ -145,6 +161,7 @@ if (isset($_SESSION['nombre_usuario'])) {
         h3 {
             border-bottom: 2px solid #444;
             padding-bottom: 5px;
+            text-shadow: 0 0 5px white, 0 0 10px black, 0 0 15px gray; /* Neon text effect */
         }
         ul {
             list-style: none;
