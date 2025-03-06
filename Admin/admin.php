@@ -31,10 +31,7 @@ if (!$conn) {
         <div class="welcome">Bienvenido, <?php echo htmlspecialchars($_SESSION['correo']); ?> </div>
         <div class="menu">
             <a href="#">Admin</a>
-            <a href="inicio.php">Inicio</a>
-            <a href="servicios.php">Servicios</a>
-            <a href="imagenes.php">Imágenes</a>
-            <a href="rutinas.php">Rutinas</a>
+            <a href="../index.html">Inicio</a>
             <div class="submenu">
                 <a href="#">Configuración</a>
                 <div class="submenu-content">

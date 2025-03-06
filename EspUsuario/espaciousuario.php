@@ -121,6 +121,7 @@ if (isset($_SESSION['nombre_usuario'])) {
             <?php if ($permiso == 'administrador') { ?>
                 <a href="../Admin/admin.php">Admin</a>
             <?php } ?>
+            <?php if ($permiso == 'usuario') { ?>
             <a href="inicio.php">Inicio</a>
             <a href="servicios.php">Servicios</a>
             <a href="imagenes.php">Imágenes</a>
@@ -129,9 +130,11 @@ if (isset($_SESSION['nombre_usuario'])) {
                 <a href="#">Configuración</a>
                 <div class="submenu-content">
                     <a href="datos_usuario.php">Datos de Usuario</a>
+                    <?php } ?>
                     <a href="cerrar-sesion.php">Cerrar Sesión</a>
                 </div>
             </div>
+            
         </div>
     </div>
     <div class="botones-verticales">

@@ -72,7 +72,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <input type="password" name="contraseña" placeholder="Contraseña" required>
                 <label><input type="checkbox"/> Recordar Datos</label>
                 <div class="botones">
-                    <a href="../RegScreen/register.html" style="text-decoration: none;" class="no_cue ani_no_cue">No tengo cuenta</a> 
+                    <a href="../RegScreen/register.php" style="text-decoration: none;" class="no_cue ani_no_cue">No tengo cuenta</a> 
                     <button type="submit" class="ini_ses ani_ini_ses">Iniciar Sesión</button>                        </div>
                     <div class="error-message"></div>
                 </form>
