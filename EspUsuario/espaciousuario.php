@@ -54,141 +54,22 @@ if (isset($_SESSION['nombre_usuario'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Espacio Usuario - GOD</title>
     <link rel="stylesheet" href="styles.css">
-    <style>
-        .boton {
-            background-color: transparent; /* Make the button background transparent */
-            color: white; /* Text color */
-            border: 2px solid white; /* White border */
-            padding: 10px 20px; /* Padding for the button */
-            font-size: 16px; /* Font size */
-            cursor: pointer; /* Pointer cursor on hover */
-            transition: all 0.3s ease; /* Smooth transition for hover effect */
-            text-shadow: 0 0 5px white, 0 0 10px white, 0 0 15px white; /* Neon text effect */
-            box-shadow: 0 0 5px white, 0 0 10px white, 0 0 15px white; /* Neon glow effect */
-        }
-
-        .boton:hover {
-            background-color: rgb(209, 209, 209); /* Light background on hover */
-            box-shadow: 0 0 20px white, 0 0 30px; /* Enhanced glow on hover */
-        }
-    </style>
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lexend+Zetta:wght@100..900&display=swap" rel="stylesheet">
 </head>
-<style>
-    body {
-    background: linear-gradient(to bottom, rgb(0, 0, 0), rgb(0, 0, 0));
-    color: white;
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-}
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #333;
-    padding: 15px 40px;
-}
-.navbar .welcome {
-    --glow-color: rgb(193, 191, 194);
-  --glow-spread-color: rgba(243, 242, 242, 0.78);
-  --enhanced-glow-color: rgb(214, 214, 214);
-  --btn-color: rgb(82, 82, 82);
-  border: .25em solid var(--glow-color);
-  padding: 1em 3em;
-  color: var(--glow-color);
-  font-size: 25px;
-  font-weight: bold;
-  background-color: var(--btn-color);
-  border-radius: 1em;
-  outline: none;
-  box-shadow: 0 0 1em .25em var(--glow-color),
-         0 0 4em 1em var(--glow-spread-color),
-         inset 0 0 .75em .25em var(--glow-color);
-  text-shadow: 0 0 .5em
-    color: white;
-    font-size: 20px;
-    margin-right: auto; /* This makes the welcome text stay on the left */
-}
-.navbar .menu {
-    display: flex;
-    align-items: center; /* Align items to the center vertically */
-    gap: 10px; /* Reduce the space between menu items */
-    margin: 10px;
-}
-.navbar .menu a {
-    color: white;
-    padding: 5px; /* Reduce padding for smaller spacing */
-    
-}
-
-.submenu {
-    position: relative;
-    margin:10px;
-}
-.navbar .submenu-content {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background-color: #555;
-    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
-    font-size:5px;
-    padding:10px;
-}
-
-.navbar .submenu-content a {
-    display: block;
-    padding: 5px;
-    margin-bottom: 5px;
-}
-.submenu:hover .submenu-content {
-    display: block;
-}
-.footer {
-            display: flex;
-            justify-content: space-around;
-            flex-wrap: wrap;
-            padding: 20px;
-            background-color: #161616;
-        }
-        .footer-column {
-            max-width: 300px;
-        }
-        h3 {
-            border-bottom: 2px solid #444;
-            padding-bottom: 5px;
-            text-shadow: 0 0 5px white, 0 0 10px black, 0 0 15px gray; /* Neon text effect */
-        }
-        ul {
-            list-style: none;
-            padding: 0;
-        }
-        ul li {
-            margin: 5px 0;
-        }
-        ul li a {
-            color: white;
-            text-decoration: none;
-        }
-        .footer-bottom {
-            text-align: center;
-            padding: 10px;
-            background-color: #000;
-        }
-</style>
 <body>
     <div class="navbar">
         <div class="welcome">Bienvenido, <?php echo htmlspecialchars($nombre_usuario); ?> </div>
         <div class="menu">
+            <a href="espaciousuario.php">Inicio</a>
+
             <?php if ($permiso == 'administrador') { ?>
-                <a href="../Admin/admin.php">Admin</a>
+                <a href="../Admin/permisos.php">Permisos</a>
+                <a href="../Admin/datos_usuario.php">Datos de Usuario</a>
             <?php } ?>
+
             <?php if ($permiso == 'usuario') { ?>
-            <a href="inicio.php">Inicio</a>
             <a href="servicios.php">Servicios</a>
             <a href="imagenes.php">Imágenes</a>
             <a href="rutinas.php">Rutinas</a>
@@ -200,22 +81,24 @@ if (isset($_SESSION['nombre_usuario'])) {
                     <a href="cerrar-sesion.php">Cerrar Sesión</a>
                 </div>
             </div>
-            
         </div>
     </div>
     <div class="botones-verticales">
-        <div class="boton-container">
-            <button class="boton">Agenda</button>
-        </div>
-        <div class="boton-container">
-            <button class="boton">Entrenamiento</button>
-        </div>
-        <div class="boton-container">
-            <button class="boton">Composición corporal</button>
-        </div>
-        <div class="boton-container">
-            <button class="boton">Dieta</button>
-        </div>
+    <div class="boton-container-agenda">
+  <button class="boton">Agenda</button>
+</div>
+
+<div class="boton-container-entrenamiento">
+  <button class="boton">Entrenamiento</button>
+</div>
+
+<div class="boton-container-composicion-corporal">
+  <button class="boton">Composición corporal</button>
+</div>
+
+<div class="boton-container-dieta">
+  <button class="boton">Dieta</button>
+</div>
     </div>
     <footer class="footer">
         <div class="footer-column">
@@ -227,19 +110,19 @@ if (isset($_SESSION['nombre_usuario'])) {
         <div class="footer-column">
             <h3>Links rápidos</h3>
             <ul>
-                <li><a href="inicio.php">Inicio</a>
-                <li><a href="servicios.php">Servicios</a>
-                <li><a href="imagenes.php">Imágenes</a>
-                <li><a href="rutinas.php">Rutinas</a>
+                <li><a href="inicio.php">Inicio</a></li>
+                <li><a href="servicios.php">Servicios</a></li>
+                <li><a href="imagenes.php">Imágenes</a></li>
+                <li><a href="rutinas.php">Rutinas</a></li>
             </ul>
         </div>
         <div class="footer-column">
             <h3>Links populares</h3>
             <ul>
-                <li><a href="inicio.php">Inicio</a>
-                <li><a href="servicios.php">Servicios</a>
-                <li><a href="imagenes.php">Imágenes</a>
-                <li><a href="rutinas.php">Rutinas</a>
+                <li><a href="inicio.php">Inicio</a></li>
+                <li><a href="servicios.php">Servicios</a></li>
+                <li><a href="imagenes.php">Imágenes</a></li>
+                <li><a href="rutinas.php">Rutinas</a></li>
             </ul>
         </div>
         <div class="footer-column">

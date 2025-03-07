@@ -30,13 +30,13 @@ if (!$conn) {
     <div class="navbar">
         <div class="welcome">Bienvenido, <?php echo htmlspecialchars($_SESSION['correo']); ?> </div>
         <div class="menu">
-            <a href="#">Admin</a>
-            <a href="../index.html">Inicio</a>
+            <a href="#">Permisos</a>
+            <a href="../EspUsuario/espaciousuario.php">Inicio</a>
             <div class="submenu">
                 <a href="#">Configuración</a>
                 <div class="submenu-content">
                     <a href="datos_usuario.php">Datos de Usuario</a>
-                    <a href="../cerrar-sesion.php">Cerrar Sesión</a>
+                    <a href="../EspUsuario/cerrar-sesion.php">Cerrar Sesión</a>
                 </div>
             </div>
         </div>
