@@ -83,45 +83,41 @@ if (isset($_SESSION['nombre_usuario'])) {
     </div>
     <div class="botones-verticales">
     <?php if ($permiso == 'usuario') { ?>
-    <div class="boton-container-agenda">
-  <button class="boton">Agenda</button>
-  <a href="agenda.php">
-</div>
+        <div class="boton-container-agenda">
+            <a href="../EspUsuario/Agenda/agenda.php"><button class="boton">Agenda</button></a>
+        </div>
 
-<div class="boton-container-entrenamiento">
-  <button class="boton">Entrenamiento</button>
-  <a href="entrenamiento.php">
-</div>
+        <div class="boton-container-entrenamiento">
+            <a href="../EspUsuario/Entrenamiento/entrenamiento.php"><button class="boton">Entrenamiento</button></a>
+        </div>
 
-<div class="boton-container-composicion-corporal">
-  <button class="boton">Composición corporal</button>
-  <a href="composicion-corporal.php">
-</div>
+        <div class="boton-container-composicion-corporal">
+            <a href="../EspUsuario/Composicion/composicion-corp.php"><button class="boton">Composición corporal</button></a>
+        </div>
 
-<div class="boton-container-dieta">
-  <button class="boton">Dieta</button>
-  <a href="dieta.php">
-</div>
-<?php } ?>
+        <div class="boton-container-dieta">
+            <a href="../EspUsuario/Dieta/dieta.php"><button class="boton">Dieta</button></a>
+        </div>
+    <?php } ?>
 
-<?php if ($permiso == 'administrador' || $permiso == 'entrenador') { ?>
-    <div class="boton-container-agenda">
-  <button class="boton"> Adminstrar Agendas</button>
-</div>
+    <?php if ($permiso == 'administrador' || $permiso == 'entrenador') { ?>
+        <div class="boton-container-agenda">
+            <a href="administrar-agendas.php"><button class="boton">Administrar Agendas</button></a>
+        </div>
 
-<div class="boton-container-entrenamiento">
-  <button class="boton">Asignar Entrenamientos</button>
-</div>
+        <div class="boton-container-entrenamiento">
+            <a href="asignar-entrenamientos.php"><button class="boton">Asignar Entrenamientos</button></a>
+        </div>
 
-<div class="boton-container-composicion-corporal">
-  <button class="boton"> Editar Composiciones corporales</button>
-</div>
+        <div class="boton-container-composicion-corporal">
+            <a href="editar-composiciones-corporales.php"><button class="boton">Editar Composiciones corporales</button></a>
+        </div>
 
-<div class="boton-container-dieta">
-  <button class="boton">Asignar Dietas</button>
+        <div class="boton-container-dieta">
+            <a href="asignar-dietas.php"><button class="boton">Asignar Dietas</button></a>
+        </div>
+    <?php } ?>
 </div>
-<?php } ?>
-    </div>
     <footer class="footer">
         <div class="footer-column">
             <h3>Contactanos</h3>
@@ -132,21 +128,21 @@ if (isset($_SESSION['nombre_usuario'])) {
         <div class="footer-column">
             <h3>Links rápidos</h3>
             <ul>
-            <li><a href="inicio.php">Inicio</a></li>
-                <li><a href="agenda.php">Agenda</a></li>
-                <li><a href="entrenamiento.php">Entrenamiento</a></li>
-                <li><a href="composicion-corp.php">Composicion Corporal</a></li>
-                <li><a href="dieta.php">Dieta</a></li>
+                <li><a href="inicio.php">Inicio</a></li>
+                <li><a href="../EspUsuario/Agenda/agenda.php">Agenda</a></li>
+                <li><a href="../EspUsuario/Entrenamiento/entrenamiento.php">Entrenamiento</a></li>
+                <li><a href="../EspUsuario/Composicion/composicion-corp.php">Composicion Corporal</a></li>
+                <li><a href="../EspUsuario/Dieta/dieta.php">Dieta</a></li>
             </ul>
         </div>
         <div class="footer-column">
             <h3>Links populares</h3>
             <ul>
                 <li><a href="inicio.php">Inicio</a></li>
-                <li><a href="agenda.php">Agenda</a></li>
-                <li><a href="entrenamiento.php">Entrenamiento</a></li>
-                <li><a href="composicion-corp.php">Composicion Corporal</a></li>
-                <li><a href="dieta.php">Dieta</a></li>
+                <li><a href="../EspUsuario/Agenda/agenda.php">Agenda</a></li>
+                <li><a href="../EspUsuario/Entrenamiento/entrenamiento.php">Entrenamiento</a></li>
+                <li><a href="../EspUsuario/Composicion/composicion-corp.php">Composicion Corporal</a></li>
+                <li><a href="../EspUsuario/Dieta/dieta.php">Dieta</a></li>
             </ul>
         </div>
         <div class="footer-column">

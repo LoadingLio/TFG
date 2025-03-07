@@ -28,7 +28,12 @@ body {
     gap: 25px;
 }
 
+a{ 
+    text-decoration: none;
+}
 .navbar .menu a {
+    
+
     color: white;
     text-decoration: none;
     padding: 12px 18px;
