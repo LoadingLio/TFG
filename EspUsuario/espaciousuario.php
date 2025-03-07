@@ -84,6 +84,7 @@ if (isset($_SESSION['nombre_usuario'])) {
         </div>
     </div>
     <div class="botones-verticales">
+    <?php if ($permiso == 'usuario') { ?>
     <div class="boton-container-agenda">
   <button class="boton">Agenda</button>
 </div>
@@ -99,6 +100,25 @@ if (isset($_SESSION['nombre_usuario'])) {
 <div class="boton-container-dieta">
   <button class="boton">Dieta</button>
 </div>
+<?php } ?>
+
+<?php if ($permiso == 'administrador' || $permiso == 'entrenador') { ?>
+    <div class="boton-container-agenda">
+  <button class="boton"> Adminstrar Agendas</button>
+</div>
+
+<div class="boton-container-entrenamiento">
+  <button class="boton">Asignar Entrenamientos</button>
+</div>
+
+<div class="boton-container-composicion-corporal">
+  <button class="boton"> Editar Composiciones corporales</button>
+</div>
+
+<div class="boton-container-dieta">
+  <button class="boton">Asignar Dietas</button>
+</div>
+<?php } ?>
     </div>
     <footer class="footer">
         <div class="footer-column">
