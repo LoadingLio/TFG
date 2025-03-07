@@ -70,9 +70,7 @@ if (isset($_SESSION['nombre_usuario'])) {
             <?php } ?>
 
             <?php if ($permiso == 'usuario') { ?>
-            <a href="servicios.php">Servicios</a>
-            <a href="imagenes.php">Imágenes</a>
-            <a href="rutinas.php">Rutinas</a>
+
             <div class="submenu">
                 <a href="#">Configuración</a>
                 <div class="submenu-content">
@@ -87,18 +85,22 @@ if (isset($_SESSION['nombre_usuario'])) {
     <?php if ($permiso == 'usuario') { ?>
     <div class="boton-container-agenda">
   <button class="boton">Agenda</button>
+  <a href="agenda.php">
 </div>
 
 <div class="boton-container-entrenamiento">
   <button class="boton">Entrenamiento</button>
+  <a href="entrenamiento.php">
 </div>
 
 <div class="boton-container-composicion-corporal">
   <button class="boton">Composición corporal</button>
+  <a href="composicion-corporal.php">
 </div>
 
 <div class="boton-container-dieta">
   <button class="boton">Dieta</button>
+  <a href="dieta.php">
 </div>
 <?php } ?>
 
@@ -130,19 +132,21 @@ if (isset($_SESSION['nombre_usuario'])) {
         <div class="footer-column">
             <h3>Links rápidos</h3>
             <ul>
-                <li><a href="inicio.php">Inicio</a></li>
-                <li><a href="servicios.php">Servicios</a></li>
-                <li><a href="imagenes.php">Imágenes</a></li>
-                <li><a href="rutinas.php">Rutinas</a></li>
+            <li><a href="inicio.php">Inicio</a></li>
+                <li><a href="agenda.php">Agenda</a></li>
+                <li><a href="entrenamiento.php">Entrenamiento</a></li>
+                <li><a href="composicion-corp.php">Composicion Corporal</a></li>
+                <li><a href="dieta.php">Dieta</a></li>
             </ul>
         </div>
         <div class="footer-column">
             <h3>Links populares</h3>
             <ul>
                 <li><a href="inicio.php">Inicio</a></li>
-                <li><a href="servicios.php">Servicios</a></li>
-                <li><a href="imagenes.php">Imágenes</a></li>
-                <li><a href="rutinas.php">Rutinas</a></li>
+                <li><a href="agenda.php">Agenda</a></li>
+                <li><a href="entrenamiento.php">Entrenamiento</a></li>
+                <li><a href="composicion-corp.php">Composicion Corporal</a></li>
+                <li><a href="dieta.php">Dieta</a></li>
             </ul>
         </div>
         <div class="footer-column">
