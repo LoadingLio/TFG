@@ -194,10 +194,10 @@ mysqli_close($conn);
     <div class="navbar">
         <div class="welcome">Bienvenido, <?php echo htmlspecialchars($nombre_usuario); ?></div>
         <div class="menu">
-            <a href="espaciousuario.php">Inicio</a>
+            <a href="../espaciousuario.php">Inicio</a>
             <?php if ($permiso == 'usuario') { ?>
-                <a href="datos_usuario.php">Datos de Usuario</a>
-                <a href="cerrar-sesion.php">Cerrar Sesión</a>
+                <a href="../datos_usuario.php">Datos de Usuario</a>
+                <a href="../cerrar-sesion.php">Cerrar Sesión</a>
             <?php } ?>
         </div>
     </div>
