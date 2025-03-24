@@ -39,6 +39,8 @@ mysqli_close($conn);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Agenda - GOD</title>
+    <link href='https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.min.css' rel='stylesheet' />
+    <script src='https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.min.js'></script>
     <style>
         body {
             background: linear-gradient(to bottom, rgb(0, 0, 0), rgb(20, 20, 20));
@@ -167,7 +169,7 @@ mysqli_close($conn);
         }
 
         td a {
-            color: red;
+            color: #f5f5f5;
             text-decoration: none;
             font-weight: bold;
         }
@@ -184,9 +186,24 @@ mysqli_close($conn);
         }
     </style>
     <script>
-        function seleccionarFecha(fecha) {
-            document.getElementById('fecha').value = fecha;
-        }
+        document.addEventListener('DOMContentLoaded', function() {
+            var calendarEl = document.getElementById('calendar');
+            var calendar = new FullCalendar.Calendar(calendarEl, {
+                initialView: 'dayGridMonth',
+                themeSystem: 'dark',
+                headerToolbar: {
+                    left: 'prev,next today',
+                    center: 'title',
+                    right: 'dayGridMonth,timeGridWeek,timeGridDay'
+                },
+                selectable: true,
+                editable: true,
+                dateClick: function(info) {
+                    document.getElementById('fecha').value = info.dateStr;
+                }
+            });
+            calendar.render();
+        });
     </script>
 </head>
 <body>
@@ -204,9 +221,9 @@ mysqli_close($conn);
 
     <h2>Mi Agenda</h2>
 
-    <!-- Calendario mensual -->
+    <!-- Calendario interactivo -->
     <div class="calendar-container">
-        <iframe src="https://calendar.google.com/calendar/embed?src=es.spain%23holiday%40group.v.calendar.google.com&ctz=Europe/Madrid" style="border: 0" width="100%" height="300" frameborder="0" scrolling="no"></iframe>
+        <div id="calendar"></div>
     </div>
 
     <div class="form-container">
