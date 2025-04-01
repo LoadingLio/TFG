@@ -111,6 +111,7 @@ mysqli_close($conn);
             box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.7);
         }
 
+
         label {
             display: block;
             margin: 10px 0 5px;
@@ -179,11 +180,42 @@ mysqli_close($conn);
         }
 
         .footer {
-            margin-top: 20px;
-            padding: 20px;
-            background-color: #161616;
-            text-align: center;
-        }
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 20px;
+    background-color: #161616;
+}
+
+.footer-column {
+    max-width: 300px;
+}
+
+h3 {
+    border-bottom: 2px solid #444;
+    padding-bottom: 5px;
+    text-shadow: 0 0 5px white, 0 0 10px black, 0 0 15px gray;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+ul li {
+    margin: 5px 0;
+}
+
+ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding: 10px;
+    background-color: #000;
+}
     </style>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
@@ -212,10 +244,8 @@ mysqli_close($conn);
         <div class="welcome">Bienvenido, <?php echo htmlspecialchars($nombre_usuario); ?></div>
         <div class="menu">
             <a href="../espaciousuario.php">Inicio</a>
-            <?php if ($permiso == 'usuario') { ?>
-                <a href="../datos_usuario.php">Datos de Usuario</a>
-                <a href="../cerrar-sesion.php">Cerrar Sesión</a>
-            <?php } ?>
+            <a href="../datos_usuario.php">Datos de Usuario</a>
+            <a href="../cerrar-sesion.php">Cerrar Sesión</a>
         </div>
     </div>
 
@@ -260,8 +290,41 @@ mysqli_close($conn);
     </table>
 
     <footer class="footer">
-        <p>© GodGym. Todos los derechos reservados.</p>
+        <div class="footer-column">
+            <h3>Contactanos</h3>
+            <p>📍 Avenida del Doctor Gadea, 35, Alicante, España</p>
+            <p>📞 +34 685 704 827</p>
+            <p>✉ GodGymContact@gmail.com</p>
+        </div>
+        <div class="footer-column">
+            <h3>Links rápidos</h3>
+            <ul>
+                <li><a href="../espaciousuario.php">Inicio</a></li>
+                <li><a href="../Agenda/agenda.php">Agenda</a></li>
+                <li><a href="../Entrenamiento/entrenamiento.php">Entrenamiento</a></li>
+                <li><a href="../Composicion/composicion-corp.php">Composicion Corporal</a></li>
+                <li><a href="../Dieta/dieta.php">Dieta</a></li>
+            </ul>
+        </div>
+        <div class="footer-column">
+            <h3>Links populares</h3>
+            <ul>
+                <li><a href="../espaciousuario.php">Inicio</a></li>
+                <li><a href="../Agenda/agenda.php">Agenda</a></li>
+                <li><a href="../Entrenamiento/entrenamiento.php">Entrenamiento</a></li>
+                <li><a href="../Composicion/composicion-corp.php">Composicion Corporal</a></li>
+                <li><a href="../Dieta/dieta.php">Dieta</a></li>
+            </ul>
+        </div>
+        <div class="footer-column">
+            <h3>Horario</h3>
+            <p>Lunes - Viernes: 7:00 - 22:00 </p>
+            <p>Sabado - Domingo: 8:00 - 13:00 </p>
+        </div>
     </footer>
+    <div class="footer-bottom">
+        <p>© GodGym. Todos los derechos reservados. Diseñado por OsVilaDoTomate</p>
+    </div>
 
 </body>
 </html>
